@@ -5,8 +5,6 @@ extends CharacterBody3D
 @export var SPEED = 5.0
 @export var JUMP_VELOCITY = 4.5
 
-@export var string = "hi"
-
 @onready var camera = $SpringArm3D
 
 func _unhandled_input(event: InputEvent) -> void:
