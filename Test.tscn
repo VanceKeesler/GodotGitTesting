@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cth4vykhcyswm"]
+[gd_scene format=3 uid="uid://cth4vykhcyswm"]
 
 [ext_resource type="PackedScene" uid="uid://betdgsdmy4xnl" path="res://Player.tscn" id="1_myinc"]
 [ext_resource type="Texture2D" uid="uid://xoj4jrmkbr80" path="res://icon.svg" id="1_njov2"]
@@ -26,22 +26,22 @@ size = Vector2(20, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_aq4fw"]
 size = Vector3(20, 0, 20)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" unique_id=1198457301]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2096661627]
 transform = Transform3D(1, 0, 0, 0, 0.5685475, 0.82265043, 0, -0.82265043, 0.5685475, 0, 2.4107783, 2.351433)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1667950639]
 environment = SubResource("Environment_njov2")
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1740605416]
 collision_mask = 3
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=503447639]
 material_override = SubResource("StandardMaterial3D_8tn2x")
 mesh = SubResource("PlaneMesh_8tn2x")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1969221411]
 shape = SubResource("BoxShape3D_aq4fw")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_myinc")]
+[node name="CharacterBody3D" parent="." unique_id=130766540 instance=ExtResource("1_myinc")]
