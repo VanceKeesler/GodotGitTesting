@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5byx2b7gioak"]
+
+[ext_resource type="Texture2D" uid="uid://xoj4jrmkbr80" path="res://icon.svg" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://dvrkc858da1uh" path="res://InventoryGrid.gd" id="1_62e2m"]
+[ext_resource type="Script" uid="uid://cjtwgbggugqhf" path="res://InventoryItem.gd" id="2_qtu10"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
+bg_color = Color(0.5609549, 0.5609549, 0.56095487, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -872.0
+offset_bottom = -368.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryGrid" type="GridContainer" parent="." node_paths=PackedStringArray("panel")]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 275.0
+offset_bottom = 275.0
+columns = 5
+script = ExtResource("1_62e2m")
+rows = 6
+panel = NodePath("Panel")
+panelSize = 50.0
+margin = 10
+metadata/_custom_type_script = "uid://dvrkc858da1uh"
+
+[node name="Panel" type="Panel" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
+
+[node name="InventoryItem" type="Control" parent="." node_paths=PackedStringArray("texture", "grid")]
+anchors_preset = 0
+offset_left = 1000.0
+offset_top = 5.0
+offset_right = 1105.0
+offset_bottom = 55.0
+script = ExtResource("2_qtu10")
+width = 2
+height = 1
+texture = NodePath("TextureRect")
+grid = NodePath("../InventoryGrid")
+metadata/_custom_type_script = "uid://cjtwgbggugqhf"
+
+[node name="TextureRect" type="TextureRect" parent="InventoryItem"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0fbet")
+expand_mode = 2
